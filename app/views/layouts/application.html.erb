@@ -6,22 +6,55 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application" %>
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
-    <!--
-      If using a TypeScript entrypoint file:
-        vite_typescript_tag 'application'
-
-      If using a .jsx or .tsx entrypoint, add the extension:
-        vite_javascript_tag 'application.jsx'
-
-      Visit the guide for more information: https://vite-ruby.netlify.app/guide/rails
-    -->
 
   </head>
 
   <body>
-    <%= yield %>
+    <main class="h-screen w-full grid grid-cols-[auto_1fr] grid-rows-[auto_1fr]">
+
+      <div class="14 flex justify-between p-2 border-b-2 border-b-gray-200">
+        <h3 class="text-xl font-semibold"><%= yield :header %></h3>
+        <% if flash[:success] %>
+          <div class="px-4 py-1 bg-green-200 rounded-md">
+            Task successfully added
+          </div>
+        <% end %>
+        <div class="w-8 h-8 rounded-full bg-blue-500">
+        </div>
+      </div>
+
+      <div class="row-start-1 row-span-2 sm:w-72 sm:p-4 flex flex-col justify-between gap-8 border-r-2 border-r-gray-200">
+        <div>
+          <h1 class="text-center text-2xl font-black">TaskCard</h1>
+        </div>
+        <ul class="flex-1 flex flex-col gap-4 text-lg font-medium px-4">
+          <li><a class="flex gap-2" href="#">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Home
+            </a></li>
+          <li><a class="flex gap-2" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+              </svg>
+              Categories
+            </a></li>
+          <li><a class="flex gap-2" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              Statistics
+            </a></li>
+        </ul>
+        <button class="bg-gray-200 text-gray-900 p-2 rounded-md text-md font-bold">Logout</button>
+      </div>
+
+      <div class="p-1">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

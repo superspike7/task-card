@@ -1,0 +1,139 @@
+<% content_for :header do %>
+  Categories
+<% end %>
+
+<div class="w-full h-full flex p-4 gap-4">
+  <div class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2">
+    <h2 class="text-xl font-bold">To Do</h2>
+
+    <div class="bg-gray-50 rounded-md flex flex-col p-2 gap-2">
+      <h3 class="font-bold text-xl">Create static UI</h3>
+      <p class="text-gray-700 font-light">
+        Create Static UI for the epicenter (the MVP feature)
+      </p>
+      <div class="flex gap-2">
+        <span class="bg-green-200 py-1 px-2 rounded-md">UI</span>
+        <span class="bg-blue-200 py-1 px-2 rounded-md">Tailwindcss</span>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 rounded-md flex flex-col p-2 gap-2">
+      <h3 class="font-bold text-xl">Category CRUD</h3>
+      <p class="text-gray-700 font-light">
+        Implement Feature/System Test for Category CRUD
+      </p>
+      <div class="flex gap-2">
+        <span class="bg-red-200 py-1 px-2 rounded-md">TDD</span>
+        <span class="bg-yellow-200 py-1 px-2 rounded-md">Minitest</span>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 rounded-md flex flex-col p-2 gap-2">
+      <h3 class="font-bold text-xl">Task CRUD</h3>
+      <p class="text-gray-700 font-light">
+        Implement Feature/System Test for Task CRUD
+      </p>
+      <div class="flex gap-2">
+        <span class="bg-red-200 py-1 px-2 rounded-md">TDD</span>
+        <span class="bg-yellow-200 py-1 px-2 rounded-md">Minitest</span>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 rounded-md flex flex-col p-2 gap-2">
+      <h3 class="font-bold text-xl">Authentication</h3>
+      <p class="text-gray-700 font-light">
+        Implement Signup, Login, and Logout system.
+      </p>
+      <div class="flex gap-2">
+        <span class="bg-red-200 py-1 px-2 rounded-md">TDD</span>
+        <span class="bg-yellow-200 py-1 px-2 rounded-md">Devise</span>
+      </div>
+    </div>
+
+    <button
+      class="bg-gray-50 rounded-md h-12 font-bold text-lg flex items-center justify-center gap-2"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      Add Task
+    </button>
+  </div>
+
+  <div class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2">
+    <h2 class="text-xl font-bold">Done</h2>
+
+    <div class="bg-gray-50 rounded-md flex flex-col p-2 gap-2">
+      <h3 class="font-bold text-xl">Setup Rails Application</h3>
+      <p class="text-gray-700 font-light">
+        Create new rails application and install vite and tailwind.
+      </p>
+      <div class="flex gap-2">
+        <span class="bg-blue-200 py-1 px-2 rounded-md">Setup</span>
+        <span class="bg-red-200 py-1 px-2 rounded-md">Rails</span>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 rounded-md flex flex-col p-2 gap-2">
+      <h3 class="font-bold text-xl">Create new Repository</h3>
+      <p class="text-gray-700 font-light">
+        create new github repository for the new project.
+      </p>
+      <div class="flex gap-2">
+        <span class="bg-blue-200 py-1 px-2 rounded-md">Setup</span>
+        <span class="bg-gray-200 py-1 px-2 rounded-md">Github</span>
+      </div>
+    </div>
+
+    <button
+      class="bg-gray-50 rounded-md h-12 font-bold text-lg flex items-center justify-center gap-2"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      Add Task
+    </button>
+  </div>
+
+  <button
+    class="bg-gray-200 text-xl font-bold h-24 w-72 flex justify-center items-center gap-2 rounded-xl"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+    Category
+  </button>
+</div>
