@@ -15,12 +15,12 @@
     <main class="h-screen w-full grid grid-cols-[auto_1fr] grid-rows-[auto_1fr]">
 
       <div class="h-12 flex justify-between p-2 border-b-2 border-b-gray-200">
-        <h3 class="text-xl font-semibold">Categories</h3>
+        <h3 class="text-xl font-semibold"><%= yield :header %></h3>
         <div class="w-8 h-8 rounded-full bg-blue-500">
         </div>
       </div>
 
-      <div class="row-start-1 row-span-2 sm:w-96 sm:p-4 flex flex-col justify-between gap-8 border-r-2 border-r-gray-200">
+      <div class="row-start-1 row-span-2 sm:w-72 sm:p-4 flex flex-col justify-between gap-8 border-r-2 border-r-gray-200">
         <div>
           <h1 class="text-center text-2xl font-black">TaskCard</h1>
         </div>
