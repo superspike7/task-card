@@ -6,9 +6,9 @@ class CategoriesTest < ApplicationSystemTestCase
 
     click_on "New Category"
 
-    fill_in "name", with: "To Do"
+    fill_in "Name", with: "To Do"
 
-    click_on "Submit"
+    click_on "Create Category"
 
     assert_selector "p", text: "Category Successfully Created!"
   end
