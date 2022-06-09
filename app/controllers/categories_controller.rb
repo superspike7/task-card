@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.all
+    @categories = Category.ordered
   end
 
   def new
@@ -37,6 +37,17 @@ class CategoriesController < ApplicationController
       else
         format.html { render :new, status: :unprocessable_entity }
         # format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    
+    respond_to do |format|
+      if @category.destroy
+        format.turbo_stream { flash.now[:success] = 'Category Successfully Deleted!' }
+        format.html { redirect_to root_url, flash[:success] = 'Category Successfully Deleted!' }
       end
     end
   end
