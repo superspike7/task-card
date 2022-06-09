@@ -1,1 +1,2 @@
+<%= turbo_stream.append "categories", partial: "categories/category", locals: { category: @category } %>
 <%= turbo_stream.prepend "flash", partial: "layouts/flash" %>

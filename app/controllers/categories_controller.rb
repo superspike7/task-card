@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   def index
+    @categories = Category.all
   end
 
   def new
@@ -7,12 +8,12 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category= Category.new(category_params)
+    @category = Category.new(category_params)
 
     respond_to do |format|
       if @category.save
-        format.turbo_stream { flash.now[:success] = "Category Successfully Created!" }
-        format.html { redirect_to root_url, flash[:success] = "Category Successfully Created!" }
+        format.turbo_stream { flash.now[:success] = 'Category Successfully Created!' }
+        format.html { redirect_to root_url, flash[:success] = 'Category Successfully Created!' }
         # format.json { render :show, status: :created, location: @post }
       else
         # format.html { render :new, status: :unprocessable_entity }
@@ -23,7 +24,7 @@ class CategoriesController < ApplicationController
 
   private
 
-    def category_params
-      params.require(:category).permit(:name)
-    end
+  def category_params
+    params.require(:category).permit(:name)
+  end
 end
