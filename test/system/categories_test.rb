@@ -25,7 +25,7 @@ class CategoriesTest < ApplicationSystemTestCase
 
     click_on "Update Category"
 
-    assert_selector "p", text: "Category Successfully Edited!"
+    assert_selector "p", text: "Category Successfully Updated!"
     assert_selector "h2", text: "Edited Name"
   end
 end
