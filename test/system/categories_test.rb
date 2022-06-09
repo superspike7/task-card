@@ -11,5 +11,6 @@ class CategoriesTest < ApplicationSystemTestCase
     click_on "Create Category"
 
     assert_selector "p", text: "Category Successfully Created!"
+    assert_selector "h2", text: "To Do"
   end
 end

@@ -2,10 +2,34 @@
   Categories
 <% end %>
 
-<div class="w-full h-full flex p-4 gap-4">
-  <div class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2">
-    <h2 class="text-xl font-bold">To Do</h2>
+<div class="w-full h-full p-4 flex gap-4 flex-start overflow-x-auto">
+  <%= turbo_frame_tag 'categories', class: "flex h-full gap-4" do %>
+    <%= render @categories %>
+  <% end %>
+  <%= link_to new_category_path,
+              class: "bg-gray-200 text-xl font-bold h-24 w-72 flex justify-center items-center gap-2 rounded-xl",
+              data: {
+                turbo_frame: 'modal',
+              } do %>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      stroke-width="2"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+      />
+    </svg>
+    New Category
+  <% end %>
+</div>
 
+<!-- 
     <div class="bg-gray-50 rounded-md flex flex-col p-2 gap-2">
       <h3 class="font-bold text-xl">Create static UI</h3>
       <p class="text-gray-700 font-light">
@@ -50,26 +74,6 @@
       </div>
     </div>
 
-    <button
-      class="bg-gray-50 rounded-md h-12 font-bold text-lg flex items-center justify-center gap-2"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-      Add Task
-    </button>
-  </div>
 
   <div class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2">
     <h2 class="text-xl font-bold">Done</h2>
@@ -117,25 +121,4 @@
     </button>
   </div>
 
-  <%= link_to new_category_path,
-              class: "bg-gray-200 text-xl font-bold h-24 w-72 flex justify-center items-center gap-2 rounded-xl",
-              data: {
-                turbo_frame: 'modal',
-              } do %>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      stroke-width="2"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
-      />
-    </svg>
-    New Category
-  <% end %>
-</div>
+  -->
