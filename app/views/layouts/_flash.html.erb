@@ -1,5 +1,9 @@
 <% if flash[:success] %>
-  <div class="px-4 py-1 bg-green-200 rounded-md">
+  <div
+    class="px-4 py-1 bg-green-200 rounded-md animate-flash"
+    data-controller="vanish"
+    data-action="animationend->vanish#remove"
+  >
     <p><%= flash[:success] %></p>
   </div>
 <% end %>
