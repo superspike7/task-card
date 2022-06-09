@@ -3,6 +3,7 @@ require "application_system_test_case"
 class CategoriesTest < ApplicationSystemTestCase
   test "create new category" do
     visit root_url 
+    assert_selector "h3", text: "Categories"
 
     click_on "New Category"
 
@@ -27,5 +28,14 @@ class CategoriesTest < ApplicationSystemTestCase
 
     assert_selector "p", text: "Category Successfully Updated!"
     assert_selector "h2", text: "Edited Name"
+  end
+
+  test "show category details" do
+    visit root_url
+    assert_selector "h3", text: "Categories"
+
+    click_on "Done"
+
+    assert_selector "h1", text: "Done Details"
   end
 end
