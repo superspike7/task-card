@@ -1,7 +1,13 @@
 <%= turbo_frame_tag category do %>
   <div class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2">
-    <div>
+    <div class="flex justify-between">
       <h2 class="text-xl font-bold"><%= category.name %></h2>
+      <%=
+        link_to 'edit',
+                edit_category_path(category),
+                data: { turbo_frame: "modal"},
+                class: 'text-gray-800 text-lg font-light'
+      %>
     </div>
 
     <button
