@@ -2,8 +2,8 @@ require 'application_system_test_case'
 
 class CategoriesTest < ApplicationSystemTestCase
   test 'create task on a specific category' do
-    category = categories(:one)
-    task = tasks(:one)
+    category = categories(:category_one)
+    task = tasks(:task_one)
 
     visit root_url
     assert_selector 'h3', text: 'Categories'
