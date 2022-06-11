@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :categories
+  get 'tasks/new'
+  get 'tasks/edit'
+
+  resources :categories do
+    resources :tasks
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
