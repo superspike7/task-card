@@ -48,4 +48,18 @@ class CategoriesTest < ApplicationSystemTestCase
     assert_selector 'p', text: new_description 
   end
 
+  test 'view a task on a specific category' do
+    category = categories(:category_one)
+    task = tasks(:task_two)
+
+    visit root_url
+    assert_selector 'h3', text: 'Categories'
+
+    within "div#task_#{task.id}" do
+      click_on task.title
+    end
+
+    assert_selector 'h1', text: "#{task.title} Details"
+  end
+
 end
