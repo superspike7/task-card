@@ -11,17 +11,17 @@ class CategoriesTest < ApplicationSystemTestCase
     within "div#category_#{category.id}" do
       click_on 'Add Task'
     end
-    assert_selector 'h1', text: 'Create new Task'
+    assert_selector 'h1', text: 'Create New Task'
 
-    fill_in 'Title', With: task.title
-    fill_in 'Description', With: task.description
+    fill_in 'Title', with: task.title
+    fill_in 'Description', with: task.description
 
     click_on 'Create Task'
 
     assert_selector 'p', text: 'Task Successfully Created!'
-    within "div#category_#{category.id}" do
-      assert_selector 'h3', text: task.title
-    end
+
+    assert_selector 'h3', text: task.title
+    assert_selector 'p', text: task.description
   end
 
 end
