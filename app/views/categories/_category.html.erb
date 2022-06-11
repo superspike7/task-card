@@ -1,19 +1,26 @@
 <%= turbo_frame_tag category do %>
-  <div class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2">
+  <div
+    class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2"
+    id="category_<%= category.id %>"
+  >
     <div class="flex justify-between">
       <%= link_to category_path(category), data: { turbo_frame: 'modal' } do %>
-        <h2 class="text-xl font-bold cursor-pointer hover:underline decoration-blue-500 decoration-2"><%= category.name %></h2>
+        <h2
+          class="text-xl font-bold cursor-pointer hover:underline decoration-blue-500 decoration-2"
+        >
+          <%= category.name %>
+        </h2>
       <% end %>
       <div class="flex gap-2">
         <%=
           link_to 'delete',
-                    category_path(category),
-                    data: {
-                      turbo_confirm: 'Are you Sure?',
-                      turbo_method: :delete,
-                      turbo_frame: '_top',
-                    },
-                    class: 'text-gray-800 text-lg font-light'
+                  category_path(category),
+                  data: {
+                    turbo_confirm: 'Are you Sure?',
+                    turbo_method: :delete,
+                    turbo_frame: '_top',
+                  },
+                  class: 'text-gray-800 text-lg font-light'
         %>
         <%=
           link_to 'edit',
@@ -26,9 +33,18 @@
       </div>
     </div>
 
-    <button
-      class="bg-gray-50 rounded-md h-12 font-bold text-lg flex items-center justify-center gap-2"
-    >
+    
+    <%= turbo_frame_tag 'tasks', class: "flex flex-col w-full gap-2" do %>
+      <%= render category.tasks %>
+    <% end %>
+
+
+
+    <%= link_to new_category_task_path(category),
+                data: {
+                  turbo_frame: 'modal',
+                },
+                class: "bg-gray-50 rounded-md h-12 font-bold text-lg flex items-center justify-center gap-2" do %>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -44,6 +60,6 @@
         />
       </svg>
       Add Task
-    </button>
+    <% end %>
   </div>
 <% end %>

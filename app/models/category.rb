@@ -1,3 +1,4 @@
 class Category < ApplicationRecord
-  scope :ordered, -> { order(id: :desc) }
+  has_many :tasks
+  scope :ordered, -> { order(id: :asc) }
 end
