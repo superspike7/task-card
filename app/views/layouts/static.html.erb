@@ -2,17 +2,55 @@
 <html>
   <head>
     <title>TaskCard</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= vite_client_tag %>
     <%= vite_javascript_tag 'application' %>
-
   </head>
 
   <body>
-    </div>
-    <%= yield %>
+    <main class="bg-white relative overflow-hidden h-screen">
+      <header class="h-24 sm:h-32 flex items-center z-30 w-full">
+        <div class="container mx-auto px-6 flex items-center justify-between">
+          <div class="uppercase text-gray-800 font-black text-3xl">
+            <h1>TaskCard</h1>
+          </div>
+          <div class="flex items-center">
+            <nav
+              class="font-sen text-gray-800 uppercase text-lg lg:flex items-center hidden"
+            >
+              <a
+                href="#"
+                class="py-2 px-6 flex text-indigo-500 border-b-2 border-indigo-500"
+              >
+                Home
+              </a>
+              <a href="#" class="py-2 px-6 flex hover:text-indigo-500">
+                Pricing
+              </a>
+              <%=
+                link_to 'Signup',
+                        new_user_registration_path,
+                        class: 'py-2 px-6 flex hover:text-indigo-500'
+              %>
+              <%=
+                link_to 'Login',
+                        new_user_session_path,
+                        class:
+                          'py-2 px-6 flex hover:text-indigo-100 hover:bg-indigo-800 bg-indigo-500 rounded-lg text-white'
+              %>
+            </nav>
+            <button class="lg:hidden flex flex-col ml-4">
+              <span class="w-6 h-1 bg-gray-800 mb-1"> </span>
+              <span class="w-6 h-1 bg-gray-800 mb-1"> </span>
+              <span class="w-6 h-1 bg-gray-800 mb-1"> </span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <%= yield %>
+    </main>
   </body>
 </html>

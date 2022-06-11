@@ -13,6 +13,7 @@ gem 'pg'
 gem 'vite_rails'
 gem "turbo-rails"
 gem "stimulus-rails"
+gem 'devise'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
