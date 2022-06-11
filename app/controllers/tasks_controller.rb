@@ -44,6 +44,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    
+    respond_to do |format|
+      if @task.destroy
+        format.turbo_stream { flash.now[:success] = 'Task Successfully Deleted!' }
+        format.html { redirect_to root_url, flash[:success] = 'Task Successfully Deleted!' }
+      end
+    end
+  end
+
+
   private
 
   def task_params
