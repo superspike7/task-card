@@ -24,4 +24,28 @@ class CategoriesTest < ApplicationSystemTestCase
     assert_selector 'p', text: task.description
   end
 
+  test 'edit task on a specific category' do
+    category = categories(:category_one)
+    task = tasks(:task_two)
+    new_title = 'edited title'
+    new_description = 'edited description'
+
+    visit root_url
+    assert_selector 'h3', text: 'Categories'
+
+    within "div#task_#{task.id}" do
+      click_on 'edit'
+    end
+
+    assert_selector 'h1', text: 'Edit Task'
+
+    fill_in 'Title', with: new_title 
+    fill_in 'Description', with: new_description 
+
+    click_on 'Update Task'
+
+    assert_selector 'h3', text: new_title 
+    assert_selector 'p', text: new_description 
+  end
+
 end
