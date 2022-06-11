@@ -1,4 +1,8 @@
 class TasksController < ApplicationController
+  def show
+    @task = Task.find(params[:id])
+  end
+
   def new
     @category = Category.find(params[:category_id])
     @task = @category.tasks.build
