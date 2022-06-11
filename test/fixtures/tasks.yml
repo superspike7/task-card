@@ -1,31 +1,36 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+task_one:
   title: Create static UI
   description: Create Static UI for the epicenter (the MVP feature)
   # tags: UI, Tailwindcss
 
-two:
+task_two:
   title: Category CRUD
   description: Implement Feature/System Test for Category CRUD
+  category_id: 1 
   # tags: TDD, Minitest 
 
-three:
+task_three:
   title: Task CRUD
   description: Implement Feature/System Test for Task CRUD
+  category_id: 1 
   # tags: TDD, Minitest 
 
-four:
+task_four:
   title: Authentication
   description: Implement Signup, Login, and Logout System
+  category_id: 1 
   # tags: TDD, Devise 
 
-five:
+task_five:
   title: Setup Rails Application
   description: Create new rails applicatoin and install vite and tailwindcss
+  category_id: 2 
   # tags: Setup, Rails
 
-six:
+task_six:
   title: Create new repository
   description: Create new github repository for the new project
+  category_id: 2
   # tags: Setup, Github 
