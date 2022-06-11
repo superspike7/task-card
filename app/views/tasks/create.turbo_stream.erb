@@ -1,2 +1,2 @@
-<%= turbo_stream.append "tasks", partial: "tasks/task", locals: { task: @task } %>
+<%= turbo_stream.append "tasks_#{@category.id}", partial: "tasks/task", locals: { task: @task } %>
 <%= turbo_stream.prepend "flash", partial: "layouts/flash" %>
