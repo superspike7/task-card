@@ -1,2 +1,13 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+<%= turbo_frame_tag "modal" do %>
+  <%= tag.div data: { controller: "turbo-modal", action: "turbo:submit-end->turbo-modal#submitEnd" } do %>
+    <div
+      class="fixed inset-0 flex items-center justify-center h-screen w-screen bg-black 
+             bg-opacity-40 backdrop-filter backdrop-blur-lg z-10 animated fadeInUp"
+    >
+      <div class="max-w-4xl rounded-lg bg-gray-100 p-7 ">
+        <h1 class="font-bold text-4xl">Edit Task</h1>
+        <%= render 'form', task: @task, category: @category %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

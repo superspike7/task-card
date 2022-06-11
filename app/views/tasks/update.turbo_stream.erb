@@ -1,0 +1,2 @@
+<%= turbo_stream.update "tasks_#{@category.id}", partial: "tasks/task", locals: { task: @task } %>
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>

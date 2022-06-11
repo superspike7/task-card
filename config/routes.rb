@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'tasks/edit'
 
   resources :categories do
-    resources :tasks
+    resources :tasks, shallow: true
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
