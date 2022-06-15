@@ -3,7 +3,9 @@
 category_one:
   id: 1
   name: To Do 
+  user: john
 
 category_two:
   id: 2
   name: Done 
+  user: john

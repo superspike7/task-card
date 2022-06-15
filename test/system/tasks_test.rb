@@ -1,6 +1,10 @@
 require 'application_system_test_case'
 
-class CategoriesTest < ApplicationSystemTestCase
+class TasksTest < ApplicationSystemTestCase
+  setup do
+    sign_in users(:john)
+  end
+
   test 'create task on a specific category' do
     category = categories(:category_one)
     task = tasks(:task_one)

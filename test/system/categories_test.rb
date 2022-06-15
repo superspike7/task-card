@@ -1,6 +1,10 @@
 require 'application_system_test_case'
 
 class CategoriesTest < ApplicationSystemTestCase
+  setup do
+    sign_in users(:john)
+  end
+
   test 'create new category' do
     visit root_url
     assert_selector 'h3', text: 'Categories'
