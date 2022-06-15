@@ -1,7 +1,6 @@
 require 'application_system_test_case'
 
 class AuthenticationFlowsTest < ApplicationSystemTestCase
-  include Devise::Test::IntegrationHelpers
 
   test 'user registers an account' do
     visit root_url

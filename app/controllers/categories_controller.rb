@@ -2,25 +2,27 @@ class CategoriesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    redirect_to home_path unless user_signed_in?
-
-    @categories = Category.ordered
+    if user_signed_in?
+      @categories = current_user.categories.ordered
+    else
+      redirect_to home_path
+    end
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = current_user.categories.find(params[:id])
   end
 
   def new
-    @category = Category.new
+    @category = current_user.categories.new
   end
 
   def edit
-    @category = Category.find(params[:id])
+    @category = current_user.categories.find(params[:id])
   end
 
   def create
-    @category = Category.new(category_params)
+    @category = current_user.categories.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -34,9 +36,9 @@ class CategoriesController < ApplicationController
     end
   end
 
-  def update 
-    @category = Category.find(params[:id])
-    
+  def update
+    @category = current_user.categories.find(params[:id])
+
     respond_to do |format|
       if @category.update(category_params)
         format.turbo_stream { flash.now[:success] = 'Category Successfully Updated!' }
@@ -50,8 +52,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
-    
+    @category = current_user.categories.find(params[:id])
+
     respond_to do |format|
       if @category.destroy
         format.turbo_stream { flash.now[:success] = 'Category Successfully Deleted!' }

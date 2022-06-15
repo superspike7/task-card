@@ -1,19 +1,19 @@
 class TasksController < ApplicationController
   def show
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def new
-    @category = Category.find(params[:category_id])
+    @category = current_user.categories.find(params[:category_id])
     @task = @category.tasks.build
   end
 
   def edit 
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
   end
 
   def create
-    @category = Category.find(params[:category_id])
+    @category = current_user.categories.find(params[:category_id])
     @task = @category.tasks.build(task_params)
 
     respond_to do |format|
@@ -29,7 +29,7 @@ class TasksController < ApplicationController
   end
 
   def update 
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     @category = @task.category
     
     respond_to do |format|
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
     
     respond_to do |format|
       if @task.destroy
