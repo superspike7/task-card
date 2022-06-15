@@ -2,7 +2,7 @@
   <div class="relative max-w-md mx-auto top-24">
     <h2 class="text-center font-bold text-4xl mb-5">Log In</h2>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render 'devise/shared/error_messages', resource: resource %>
 
       <div class="flex flex-col w-full h-full p-2 gap-4">
@@ -38,6 +38,7 @@
 
         <%=
           f.submit 'Log in',
+                   data: { turbo: false },
                    class:
                      'bg-indigo-500 text-gray-100 p-2 rounded-lg text-lg font-semibold'
         %>
