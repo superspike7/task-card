@@ -3,6 +3,7 @@
 task_one:
   title: Create static UI
   description: Create Static UI for the epicenter (the MVP feature)
+  category_id: 2 
   # tags: UI, Tailwindcss
 
 task_two:
