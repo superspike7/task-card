@@ -1,21 +1,22 @@
-<div
-  class="bg-gray-50 rounded-md flex flex-col p-2 gap-2"
-  id="task_<%= task.id %>"
->
-  <div class="flex justify-between">
-    <%= link_to task_path(task),
+<%= turbo_frame_tag "task_#{task.id}" do %>
+  <div
+    class="bg-gray-50 rounded-md flex flex-col p-2 gap-2"
+    id="task_<%= task.id %>"
+  >
+    <div class="flex justify-between">
+      <%= link_to task_path(task),
                 data: {
                   turbo_frame: 'modal'
                 } do %>
-      <h3
-        class="font-bold text-xl hover:underline 
+        <h3
+          class="font-bold text-xl hover:underline 
                  decoration-2 decoration-blue-500"
-      >
-        <%= task.title %>
-      </h3>
-    <% end %>
+        >
+          <%= task.title %>
+        </h3>
+      <% end %>
 
-    <div class="flex gap-2">
+      <div class="flex gap-2">
         <%=
           link_to 'delete',
                   task_path(task),
@@ -26,19 +27,20 @@
                   },
                   class: 'text-gray-800 text-lg font-light'
         %>
-      <%=
-        link_to 'edit',
-                edit_task_path(task),
-                data: {
-                  turbo_frame: 'modal',
-                },
-                class: 'text-md font-light'
-      %>
+        <%=
+          link_to 'edit',
+                  edit_task_path(task),
+                  data: {
+                    turbo_frame: 'modal',
+                  },
+                  class: 'text-md font-light'
+        %>
+      </div>
+    </div>
+    <p class="text-gray-700 font-light"><%= task.description %></p>
+    <div class="flex gap-2">
+      <span class="bg-blue-200 py-1 px-2 rounded-md">Setup</span>
+      <span class="bg-red-200 py-1 px-2 rounded-md">Rails</span>
     </div>
   </div>
-  <p class="text-gray-700 font-light"><%= task.description %></p>
-  <div class="flex gap-2">
-    <span class="bg-blue-200 py-1 px-2 rounded-md">Setup</span>
-    <span class="bg-red-200 py-1 px-2 rounded-md">Rails</span>
-  </div>
-</div>
+<% end %>

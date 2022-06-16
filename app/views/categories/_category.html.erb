@@ -33,12 +33,9 @@
       </div>
     </div>
 
-    
     <%= turbo_frame_tag "tasks_#{category.id}", class: "flex flex-col w-full gap-2 overflow-y-auto" do %>
       <%= render category.tasks %>
     <% end %>
-
-
 
     <%= link_to new_category_task_path(category),
                 data: {

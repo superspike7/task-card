@@ -62,6 +62,12 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def today
+    @today = current_user.categories.find_or_create_by(name: 'To Do')
+    @done = current_user.categories.find_or_create_by(name: 'Done')
+    @tasks = @today.tasks
+  end
+
   private
 
   def category_params
