@@ -39,6 +39,7 @@ class CategoriesController < ApplicationController
   def update
     @category = current_user.categories.find(params[:id])
 
+    @category.switch_position(category_params[:position])
     respond_to do |format|
       if @category.update(category_params)
         format.turbo_stream { flash.now[:success] = 'Category Successfully Updated!' }
@@ -71,6 +72,6 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :position)
   end
 end
