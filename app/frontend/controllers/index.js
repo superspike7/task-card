@@ -15,3 +15,6 @@ application.register("sortable", SortableController);
 
 import DraggableController from "./draggable_controller.js";
 application.register("draggable", DraggableController);
+
+import NestedDraggableController from "./nested_draggable_controller.js";
+application.register("nested-draggable", NestedDraggableController);

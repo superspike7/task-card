@@ -55,10 +55,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def move
+    @task = current_user.tasks.find(params[:id])
+    @task.insert_at(params[:position].to_i)
+    @task.update(category_id: params[:category_id])
+    head :ok
+  end
+
 
   private
 
   def task_params
-    params.require(:task).permit(:title, :description, :category_id)
+    params.require(:task).permit(:title, :description, :category_id, :position)
   end
 end

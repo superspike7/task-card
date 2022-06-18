@@ -1,7 +1,7 @@
 class Category < ApplicationRecord
   validates :name, presence: true
 
-  has_many :tasks, dependent: :destroy
+  has_many :tasks, -> {order(position: :asc)}, dependent: :destroy
   belongs_to :user
 
   acts_as_list scope: :user

@@ -33,7 +33,10 @@
       </div>
     </div>
 
-    <%= turbo_frame_tag "tasks_#{category.id}", class: "flex flex-col w-full gap-2 overflow-y-auto" do %>
+    <%= turbo_frame_tag "tasks_#{category.id}", 
+                        class: "flex flex-col w-full gap-2 overflow-y-auto",
+                        "data-controller": 'nested-draggable',
+                        "data-drag-url": "/tasks/:id/move" do %>
       <%= render category.tasks %>
     <% end %>
 
