@@ -9,3 +9,6 @@ application.register("hello", HelloController);
 
 import TurboModalController from "./turbo_modal_controller.js";
 application.register("turbo-modal", TurboModalController);
+
+import SortableController from "./sortable_controller.js";
+application.register("sortable", SortableController);
