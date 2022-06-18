@@ -1,4 +1,4 @@
-<%= turbo_frame_tag category, data: { position: category.position } do %>
+<%= turbo_frame_tag category, data: { id: category.id } do %>
   <div
     class="bg-gray-200 rounded-xl h-full w-72 flex flex-col p-2 gap-2"
     id="category_<%= category.id %>"

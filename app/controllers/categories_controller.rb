@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     if user_signed_in?
-      @categories = current_user.categories.ordered
+      @categories = current_user.categories
     else
       redirect_to home_path
     end
@@ -39,7 +39,7 @@ class CategoriesController < ApplicationController
   def update
     @category = current_user.categories.find(params[:id])
 
-    @category.switch_position(category_params[:position])
+    # @category.switch_position(category_params[:position])
     respond_to do |format|
       if @category.update(category_params)
         format.turbo_stream { flash.now[:success] = 'Category Successfully Updated!' }
@@ -67,6 +67,12 @@ class CategoriesController < ApplicationController
     @today = current_user.categories.find_or_create_by(name: 'To Do')
     @done = current_user.categories.find_or_create_by(name: 'Done')
     @tasks = @today.tasks
+  end
+
+  def move
+    @category = current_user.categories.find(params[:id])
+    @category.insert_at(params[:position].to_i)
+    head :ok
   end
 
   private
