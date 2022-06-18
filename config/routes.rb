@@ -7,7 +7,11 @@ Rails.application.routes.draw do
     member do
       patch :move
     end
-    resources :tasks, shallow: true
+    resources :tasks, shallow: true do
+      member do
+        patch :move
+      end
+    end
   end
 
   get 'today', to: 'categories#today'

@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "task_#{task.id}" do %>
+<%= turbo_frame_tag "task_#{task.id}", "data-id": task.id do %>
   <div
     class="bg-gray-50 rounded-md flex flex-col p-2 gap-2"
     id="task_<%= task.id %>"
