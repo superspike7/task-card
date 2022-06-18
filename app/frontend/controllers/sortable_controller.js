@@ -48,5 +48,5 @@ function compareElements(left, right) {
 }
 
 function getSortCode(element) {
-  return element.getAttribute("data-position") || 0;
+  return element.getAttribute("data-position");
 }

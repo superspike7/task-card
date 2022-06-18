@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   }
 
   resources :categories do
+    member do
+      patch :move
+    end
     resources :tasks, shallow: true
   end
 

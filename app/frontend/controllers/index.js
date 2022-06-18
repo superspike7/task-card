@@ -12,3 +12,6 @@ application.register("turbo-modal", TurboModalController);
 
 import SortableController from "./sortable_controller.js";
 application.register("sortable", SortableController);
+
+import DraggableController from "./draggable_controller.js";
+application.register("draggable", DraggableController);
