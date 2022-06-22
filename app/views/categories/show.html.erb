@@ -14,10 +14,10 @@
         </h1>
         <div>
           <p>Tasks:</p>
-          <ul>
-            <li>test</li>
-            <li>test</li>
-            <li>test</li>
+          <ul class="mt-2 list-decimal p-4">
+            <% @category.tasks.each do |task| %>
+              <li><%= task.title %></li>
+            <% end %>
           </ul>
         </div>
       </div>
