@@ -1,24 +1,51 @@
-# README
+# TaskCard
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Kanban board app for task and project management.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Manage Tasks and Categories
+- Drag and Drop tasks for organizing and moving tasks to different categories
+- Simple Authentication
 
-* System dependencies
 
-* Configuration
+## Screenshots and recording
 
-* Database creation
+![Screenshot_2024-09-05-15-37-57_32252](https://github.com/user-attachments/assets/e5aa4bbc-61e5-4dfc-9343-4009cfcbf92e)
 
-* Database initialization
+![Screenshot_2024-09-05-15-46-51_4201](https://github.com/user-attachments/assets/fa5ba972-b789-4eae-8384-933b959a6cda)
 
-* How to run the test suite
+https://github.com/user-attachments/assets/d23e82f2-c69b-4f9a-ac74-5d4da08716af
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+
+## Requirements
+
+- Rails 7.1.3.2 
+- Ruby 3.1.0p0
+- postgresql
+- node v21.2.0 (for vite-rails)
+
+## Installation
+
+1. Clone This repo.
+2. Install the gems:
+
+   ```sh
+   bundle install
+   ```
+3. create and migrate db:
+   ```sh
+   rails db:create
+   rails db:migrate
+   ```
+
+   
+## Run Test
+- run `rails test`
+
+## References
+- [design inspiration](https://dribbble.com/shots/16727362-Weather-Dashboard)
+- [API Doc](https://open-meteo.com/en/docs)
+- [Bootstrap Doc](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
