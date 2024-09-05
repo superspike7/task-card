@@ -40,12 +40,3 @@ https://github.com/user-attachments/assets/d23e82f2-c69b-4f9a-ac74-5d4da08716af
    rails db:create
    rails db:migrate
    ```
-
-   
-## Run Test
-- run `rails test`
-
-## References
-- [design inspiration](https://dribbble.com/shots/16727362-Weather-Dashboard)
-- [API Doc](https://open-meteo.com/en/docs)
-- [Bootstrap Doc](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
